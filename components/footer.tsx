@@ -50,7 +50,7 @@ export function Footer() {
             <h4 className="font-heading font-semibold text-white mb-4">Bog'lanish</h4>
             <div className="space-y-3">
               <a
-                href="https://t.me/xfvipteam"
+                href={process.env.NEXT_PUBLIC_TELEGRAM_URL || "https://t.me/xfvipteam"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
@@ -59,7 +59,7 @@ export function Footer() {
                 <span>Telegram</span>
               </a>
               <a
-                href="https://instagram.com/xfvipteam"
+                href={process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/xfvipteam"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"

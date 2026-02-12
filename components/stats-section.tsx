@@ -82,7 +82,7 @@ export function StatsSection() {
     },
     {
       label: 'Win Rate',
-      value: '65',
+      value: '80-90',
       suffix: '%',
       icon: Target,
       color: 'text-primary'
