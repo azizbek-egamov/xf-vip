@@ -25,11 +25,24 @@ import { Crown, Lock, Mail, User, Phone, CheckCircle, CreditCard, Copy, Upload, 
 import { toast } from 'sonner'
 
 export function VipEntrySection() {
+  // Prop Account Prices in UZS
+  const PROP_ACCOUNTS = [
+    { size: '10,000', price: 1300000, label: '$10,000 — 1,300,000 so‘m' },
+    { size: '15,000', price: 1695000, label: '$15,000 — 1,695,000 so‘m' },
+    { size: '25,000', price: 2790000, label: '$25,000 — 2,790,000 so‘m' },
+    { size: '50,000', price: 5000000, label: '$50,000 — 5,000,000 so‘m' },
+    { size: '100,000', price: 8000000, label: '$100,000 — 8,000,000 so‘m' },
+    { size: '200,000', price: 14500000, label: '$200,000 — 14,500,000 so‘m' },
+    { size: '400,000', price: 35000000, label: '$400,000 — 35,000,000 so‘m' },
+  ]
+  const VIP_FEE_USD = 77
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     telegram: '',
     format: '',
+    propAccount: '',
     agreed: false,
     riskAgreed: false
   })
@@ -94,6 +107,15 @@ export function VipEntrySection() {
     toast.success('Karta raqami nushalandi!')
   }
 
+  const calculateTotal = () => {
+    let total = VIP_FEE_USD * exchangeRate
+    const selectedProp = PROP_ACCOUNTS.find(p => p.size === formData.propAccount)
+    if (selectedProp) {
+      total += selectedProp.price
+    }
+    return Math.floor(total)
+  }
+
   const finalSubmit = async () => {
     if (!receiptFile) {
       toast.error('Iltimos, to\'lov cheki rasmini yuklang')
@@ -103,7 +125,11 @@ export function VipEntrySection() {
     setIsLoading(true)
 
     try {
-      const priceUzs = (77 * exchangeRate).toLocaleString('uz-UZ')
+      // Calculate final amounts
+      const totalAmount = calculateTotal().toLocaleString()
+      const selectedProp = PROP_ACCOUNTS.find(p => p.size === formData.propAccount)
+      const propPrice = selectedProp ? selectedProp.price.toLocaleString() : '0'
+
       const message = `
 <b>👑 YANGI VIP A'ZO (TO'LOV BILAN)</b>
 
@@ -111,9 +137,12 @@ export function VipEntrySection() {
 <b>📧 Email:</b> ${formData.email}
 <b>📱 Telegram:</b> ${formData.telegram}
 <b>📊 Format:</b> ${formData.format.toUpperCase()}
-<b>💰 To'lov:</b> $77 (~${priceUzs} UZS)
-<b>🧾 Chek:</b> Yuklangan
+<b>💼 Prop Hisob:</b> $${formData.propAccount}
+<b>💰 Prop Narxi:</b> ${propPrice} UZS
+<b>💵 VIP To'lov:</b> $${VIP_FEE_USD} (kurs bo'yicha)
+<b>💳 Jami To'lov:</b> ${totalAmount} UZS
 
+<i>Foydalanuvchi to'lov chekini yubordi. Iltimos tekshiring.</i>
 #vip #payment #new_member
       `
 
@@ -140,6 +169,7 @@ export function VipEntrySection() {
             email: '',
             telegram: '',
             format: '',
+            propAccount: '',
             agreed: false,
             riskAgreed: false
           })
@@ -239,7 +269,7 @@ export function VipEntrySection() {
             <span className="text-primary neon-glow">VIP Kirish</span>
           </h2>
           <p className="text-lg text-muted-foreground text-pretty mb-4">
-            Eksklyuziv XF VIP TEAM a'zosi bo'ling
+            Eksklyuziv XF VIP a'zosi bo'ling
           </p>
           <div className="inline-flex items-center gap-2 glass px-6 py-3 rounded-full">
             <CreditCard className="w-5 h-5 text-primary" />
@@ -329,9 +359,31 @@ export function VipEntrySection() {
                   <SelectValue placeholder="Formatni tanlang" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="format-a">Format A - Asosiy</SelectItem>
-                  <SelectItem value="format-b">Format B - Professional</SelectItem>
-                  <SelectItem value="format-c">Format C - VIP Elite</SelectItem>
+                  <SelectItem value="format-a">Format A - INVEST</SelectItem>
+                  <SelectItem value="format-b">Format B - TRADER</SelectItem>
+                  <SelectItem value="format-c">Format C - LEARN</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Prop Account Selection */}
+            <div className="space-y-2">
+              <Label htmlFor="prop-account" className="text-foreground">
+                Prop Hisob Hajmi *
+              </Label>
+              <Select
+                value={formData.propAccount}
+                onValueChange={(value) => setFormData({ ...formData, propAccount: value })}
+              >
+                <SelectTrigger className="bg-secondary border-border focus:border-primary">
+                  <SelectValue placeholder="Hisob hajmini tanlang" />
+                </SelectTrigger>
+                <SelectContent>
+                  {PROP_ACCOUNTS.map((account) => (
+                    <SelectItem key={account.size} value={account.size}>
+                      {account.label}
+                    </SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
@@ -374,10 +426,10 @@ export function VipEntrySection() {
             {/* Submit Button */}
             <Button
               type="submit"
-              disabled={!isFormValid || isLoading}
+              disabled={!formData.name || !formData.email || !formData.telegram || !formData.format || !formData.propAccount || !formData.agreed}
               className="w-full bg-primary hover:bg-primary/90 text-white neon-border py-6 text-base font-semibold"
             >
-              VIP A'zo Bo'lish - $77
+              VIP A'zo Bo'lish
             </Button>
           </form>
         </motion.div>
@@ -396,12 +448,25 @@ export function VipEntrySection() {
               </DialogHeader>
 
               {/* Price Display */}
-              <div className="bg-secondary/50 rounded-lg p-6 text-center border border-border">
-                <p className="text-sm text-muted-foreground mb-1">To'lov miqdori:</p>
-                <div className="flex flex-col items-center">
-                  <span className="text-3xl font-bold text-white">$77.00</span>
-                  <span className="text-primary font-semibold mt-1">~ {priceUzs} UZS</span>
+              <div className="bg-secondary/50 rounded-lg p-6 space-y-3 border border-border">
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-muted-foreground">VIP A'zolik ($77):</span>
+                  <span className="text-foreground">{(VIP_FEE_USD * exchangeRate).toLocaleString()} UZS</span>
                 </div>
+                <div className="flex justify-between items-center text-sm">
+                  <span className="text-muted-foreground">Prop Hisob (${formData.propAccount}):</span>
+                  <span className="text-foreground">
+                    {PROP_ACCOUNTS.find(p => p.size === formData.propAccount)?.price.toLocaleString() || 0} UZS
+                  </span>
+                </div>
+                <div className="h-px bg-border my-2" />
+                <div className="flex justify-between items-center font-bold">
+                  <span className="text-primary">Jami To'lov:</span>
+                  <span className="text-xl text-white">{calculateTotal().toLocaleString()} UZS</span>
+                </div>
+                <p className="text-xs text-muted-foreground text-center mt-2">
+                  * Kurs: 1 USD = {exchangeRate.toLocaleString()} UZS
+                </p>
               </div>
 
               {/* Card Details */}

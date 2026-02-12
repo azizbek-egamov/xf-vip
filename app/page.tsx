@@ -12,6 +12,7 @@ import { VipEntrySection } from '@/components/vip-entry-section'
 import { WaitlistSection } from '@/components/waitlist-section'
 import { Footer } from '@/components/footer'
 import { LoadingScreen } from '@/components/loading-screen'
+import { MerchSection } from '@/components/merch-section'
 
 export default function Page() {
   const [showContent, setShowContent] = useState(false)
@@ -42,6 +43,7 @@ export default function Page() {
               <FormatsSection />
               <TeamSection />
               <StatsSection />
+              <MerchSection />
               <VipEntrySection />
               <WaitlistSection />
             </main>

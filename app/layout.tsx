@@ -15,8 +15,8 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'XF VIP TEAM | Exclusive Prop Trading',
-  description: 'Join the elite XF VIP TEAM - Exclusive prop trading with full transparency, accountability, and professional support. Limited slots available.',
+  title: 'XF VIP | Exclusive Prop Trading',
+  description: 'Join the elite XF VIP - Exclusive prop trading with full transparency, accountability, and professional support. Limited slots available.',
   generator: 'v0.app',
 }
 

@@ -64,7 +64,7 @@ export function LoadingScreen() {
                             className="text-center mb-6"
                         >
                             <h2 className="font-heading font-bold text-xl md:text-2xl text-white tracking-widest metal-text">
-                                XF VIP TEAM
+                                XF VIP
                             </h2>
                         </motion.div>
 

@@ -21,42 +21,42 @@ export function FormatsSection() {
   const formats: Format[] = [
     {
       name: 'Format A',
-      price: 'Asosiy',
-      description: 'Boshlang\'ich darajadagi treyderlarga mos',
+      price: 'INVEST',
+      description: 'Hisobni bizga topshirmoqchi bo\'lganlar uchun',
       features: [
-        { text: 'Kunlik trade signallari', included: true },
-        { text: 'Asosiy trade strategiyalar', included: true },
-        { text: 'Haftalik tahlillar', included: true },
-        { text: 'Guruh chat doʻstup', included: true },
-        { text: 'Individual konsultatsiya', included: false },
-        { text: 'VIP kontent', included: false },
+        { text: 'Treydingni bilmasangiz ham bo\'ladi', included: true },
+        { text: 'Vaqtingiz bo\'lishi shart emas', included: true },
+        { text: 'Savdoni XF TEAM qiladi', included: true },
+        { text: 'Foyda: 50% sizga / 50% XF', included: true },
+        { text: 'Risksiz (shaffoflik)', included: true },
+        { text: '$10k+ Prop hisob talab qilinadi', included: true },
       ],
     },
     {
       name: 'Format B',
-      price: 'Professional',
-      description: 'O\'rta darajadagi treyderlarga mos',
+      price: 'TRADER',
+      description: 'Biz bilan birga savdo qilmoqchi bo\'lganlar uchun',
       features: [
-        { text: 'Kunlik trade signallari', included: true },
-        { text: 'Pro trade strategiyalar', included: true },
-        { text: 'Kunlik tahlillar', included: true },
-        { text: 'Guruh chat do\'stup', included: true },
-        { text: 'Individual konsultatsiya (haftasiga 1 marta)', included: true },
-        { text: 'VIP kontent (cheklangan)', included: true },
+        { text: 'O‘z hisobingizda savdo qilasiz', included: true },
+        { text: 'Live savdolar', included: true },
+        { text: 'Kirish–chiqish tahlillari', included: true },
+        { text: 'XF strategiyalari', included: true },
+        { text: 'Eng yaxshilar jamoaga olinadi', included: true },
+        { text: '$10k+ Prop hisob talab qilinadi', included: true },
       ],
       popular: true,
     },
     {
       name: 'Format C',
-      price: 'VIP Elite',
-      description: 'Yuqori darajadagi treyderlarga mos',
+      price: 'LEARN',
+      description: 'Noldan o\'rganmoqchi bo\'lganlar uchun',
       features: [
-        { text: 'Prioritet trade signallari', included: true },
-        { text: 'Elite trade strategiyalar', included: true },
-        { text: 'Doimiy tahlillar va yangilanishlar', included: true },
-        { text: 'VIP guruh chat', included: true },
-        { text: 'Individual konsultatsiya (cheksiz)', included: true },
-        { text: 'To\'liq VIP kontent', included: true },
+        { text: '0 dan boshlash', included: true },
+        { text: 'Dasturlar o\'rnatish va tushuntirish', included: true },
+        { text: 'Live savdolarda tushuntirish', included: true },
+        { text: 'Risk management', included: true },
+        { text: 'Keyinchalik Trader yoki Invest ga o\'tish', included: true },
+        { text: '$10k+ Prop hisob talab qilinadi', included: true },
       ],
     },
   ]
@@ -126,8 +126,8 @@ export function FormatsSection() {
                 transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
               }}
               className={`relative ${format.popular
-                  ? 'glass-strong border-2 border-primary/50 neon-border neon-border-hover lg:-mt-4 lg:mb-4'
-                  : 'glass border border-border hover:border-primary/30'
+                ? 'glass-strong border-2 border-primary/50 neon-border neon-border-hover lg:-mt-4 lg:mb-4'
+                : 'glass border border-border hover:border-primary/30'
                 } rounded-lg p-6 md:p-8 transition-all duration-400 max-w-md mx-auto lg:max-w-none w-full`}
             >
               {/* Popular Badge with pulse */}
@@ -182,8 +182,8 @@ export function FormatsSection() {
                 <Button
                   onClick={() => scrollToSection('vip-entry')}
                   className={`w-full ${format.popular
-                      ? 'bg-primary hover:bg-primary/90 text-white neon-border'
-                      : 'bg-secondary hover:bg-secondary/90 text-foreground'
+                    ? 'bg-primary hover:bg-primary/90 text-white neon-border'
+                    : 'bg-secondary hover:bg-secondary/90 text-foreground'
                     }`}
                 >
                   Tanlash

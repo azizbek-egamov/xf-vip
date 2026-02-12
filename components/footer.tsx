@@ -11,7 +11,7 @@ export function Footer() {
               <div className="w-8 h-8 bg-primary rounded flex items-center justify-center neon-border">
                 <span className="font-heading font-bold text-white text-sm">XF</span>
               </div>
-              <h3 className="font-heading font-bold text-lg text-white">XF VIP TEAM</h3>
+              <h3 className="font-heading font-bold text-lg text-white">XF VIP</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Eksklyuziv prop trading jamoa. Professional yondashuv, to'liq shaffoflik va masuliyat.
@@ -75,7 +75,7 @@ export function Footer() {
         <div className="mt-8 pt-8 border-t border-border/50">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground text-center md:text-left">
-              © 2025 XF VIP TEAM. Barcha huquqlar himoyalangan.
+              © 2025 XF VIP. Barcha huquqlar himoyalangan.
             </p>
             <p className="text-xs text-muted-foreground text-center md:text-right max-w-md">
               Ogohlantirish: Trading yuqori xavfli faoliyat hisoblanadi. Sarmoyangizni yo'qotish xavfi mavjud.

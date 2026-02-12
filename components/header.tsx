@@ -35,7 +35,7 @@ export function Header() {
             </div>
             <div>
               <h1 className="font-heading font-bold text-base md:text-lg text-white">
-                XF VIP TEAM
+                XF VIP
               </h1>
               <p className="text-[10px] md:text-xs text-muted-foreground">Prop Trading Elite</p>
             </div>

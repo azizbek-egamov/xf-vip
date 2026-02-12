@@ -57,7 +57,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
       <StarfieldBackground />
-      
+
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/2 left-1/2 w-[600px] h-[600px] -translate-x-1/2 -translate-y-1/2"
@@ -84,7 +84,7 @@ export function HeroSection() {
         />
       </div>
 
-      <motion.div 
+      <motion.div
         className="container mx-auto px-4 py-12 md:py-20 relative z-10"
         variants={containerVariants}
         initial="hidden"
@@ -106,21 +106,21 @@ export function HeroSection() {
             variants={itemVariants}
             className="font-heading font-black text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight text-balance"
           >
-            <motion.span 
+            <motion.span
               className="metal-text block mb-2"
               initial={{ filter: 'blur(10px)', opacity: 0 }}
               animate={{ filter: 'blur(0px)', opacity: 1 }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             >
-              XF VIP TEAM
+              XF VIP
             </motion.span>
-            <motion.span 
+            <motion.span
               className="neon-glow block relative"
               initial={{ filter: 'blur(10px)', opacity: 0 }}
               animate={{ filter: 'blur(0px)', opacity: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              Eksklyuziv Prop Trading
+              BIRGA TRADE QILAMIZ
               <motion.span
                 className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-red-600 to-red-500"
                 initial={{ width: 0 }}
@@ -134,7 +134,7 @@ export function HeroSection() {
             variants={itemVariants}
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed text-pretty"
           >
-            Professional prop trading jamoasiga qo'shiling. To'liq shaffoflik, haqiqiy natijalar va 
+            Professional prop trading jamoasiga qo'shiling. To'liq shaffoflik, haqiqiy natijalar va
             individual yondashuv bilan muvaffaqiyatga erishing.
           </motion.p>
 
@@ -181,8 +181,8 @@ export function HeroSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: 40 }}
                 viewport={{ once: true }}
-                transition={{ 
-                  duration: 0.8, 
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.15,
                   ease: [0.22, 1, 0.36, 1]
                 }}

@@ -62,24 +62,24 @@ export function AboutSection() {
             className="text-center mb-12 md:mb-16"
           >
             <h2 className="font-heading font-black text-3xl md:text-5xl mb-6 text-balance">
-              <span className="metal-text">XF VIP TEAM</span>
+              <span className="metal-text">XF VIP</span>
               <br />
               <span className="neon-glow">Nima uchun Biz?</span>
             </h2>
             <div className="max-w-3xl mx-auto space-y-4 text-lg text-muted-foreground leading-relaxed">
               <p className="text-pretty">
-                XF VIP TEAM - bu faqat signallar emas, balki to'liq professional trading tajribasi. 
+                XF VIP - bu faqat signallar emas, balki to'liq professional trading tajribasi.
                 Biz har bir a'zoga individual yondashamiz va haqiqiy natijalar bilan ishlaymiz.
               </p>
               <p className="text-pretty">
-                Bizning jamoamiz prop trading sohasida katta tajribaga ega bo'lgan professionallardan iborat. 
+                Bizning jamoamiz prop trading sohasida katta tajribaga ega bo'lgan professionallardan iborat.
                 Biz har bir trade, har bir qaror va har bir natijani to'liq shaffof tarzda baham ko'ramiz.
               </p>
             </div>
           </motion.div>
 
           {/* Highlights Grid */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             variants={containerVariants}
             initial="hidden"
@@ -120,15 +120,15 @@ export function AboutSection() {
             </h4>
             <div className="space-y-2 text-sm text-muted-foreground leading-relaxed">
               <p>
-                Trading yuqori darajada xavfli faoliyat hisoblanadi. Siz sarmoyangizning bir qismini yoki 
+                Trading yuqori darajada xavfli faoliyat hisoblanadi. Siz sarmoyangizning bir qismini yoki
                 to'liq miqdorini yo'qotishingiz mumkin.
               </p>
               <p>
-                XF VIP TEAM hech qanday foyda kafolati bermaydi. Biz faqat professional yo'l-yo'riq, 
+                XF VIP hech qanday foyda kafolati bermaydi. Biz faqat professional yo'l-yo'riq,
                 strategiyalar va ta'lim taqdim etamiz.
               </p>
               <p>
-                Iltimos, faqat yo'qotishga qodir bo'lgan mablag'lar bilan trading qiling. Barcha qarorlar 
+                Iltimos, faqat yo'qotishga qodir bo'lgan mablag'lar bilan trading qiling. Barcha qarorlar
                 va ularning natijalari sizning mas'uliyatingizda.
               </p>
             </div>

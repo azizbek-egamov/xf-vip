@@ -209,7 +209,7 @@ export function WaitlistSection() {
                 className="text-sm text-muted-foreground leading-relaxed cursor-pointer"
               >
                 Men trading yuqori xavfli faoliyat ekanligini tushunaman va butun sarmoyamni
-                yo'qotish xavfi borligini qabul qilaman. XF VIP TEAM hech qanday foyda kafolati
+                yo'qotish xavfi borligini qabul qilaman. XF VIP hech qanday foyda kafolati
                 bermaydi.
               </Label>
             </div>
